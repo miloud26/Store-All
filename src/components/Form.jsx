@@ -118,7 +118,7 @@ function Form({ id }) {
 
   const communes = useMemo(() => {
     const selectedWilaya = wilayaCommuneInfo.find(
-      (item) => item.name === wilaya,
+      (item) => item.name.split(" - ")[0].trim() === wilaya,
     );
 
     if (!selectedWilaya) return [];
@@ -430,7 +430,7 @@ function Form({ id }) {
                     required
                     fullWidth
                     variant="outlined"
-                    placeholder="الاسم الأول"
+                    placeholder="الاسم الكامل"
                     value={name}
                     disabled={isSubmitting}
                     inputProps={{
@@ -465,8 +465,10 @@ function Form({ id }) {
                     <option value="">اختر الولاية</option>
 
                     {wilayaInfo.slice(1).map((item) => (
-                      <option key={item.id} value={item.name}>
-                        {item.id} - {item.name}
+                      <option key={item.id} value={item.name.split(" - ")[0]}>
+                        {item.id} -{" "}
+                        {item.name.split(" - ").slice(1).join(" - ").trim() ||
+                          item.name}
                       </option>
                     ))}
                   </select>
@@ -482,8 +484,8 @@ function Form({ id }) {
                     <option value="">اختر البلدية</option>
 
                     {communes.map((item) => (
-                      <option key={item} value={item}>
-                        {item}
+                      <option key={item} value={item.split(" - ")[0]}>
+                        {item.split(" - ").slice(1).join(" - ").trim() || item}
                       </option>
                     ))}
                   </select>
