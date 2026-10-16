@@ -43,8 +43,20 @@
     <script>
       (function () {
         var path = window.location.pathname;
-        var isLanding = path.indexOf("landingpage01") !== -1;
-        var isProduct = path.indexOf("page01") !== -1;
+        var isLanding =
+          path.indexOf("landingpage01") !== -1 ||
+          path.indexOf("/landing/") === 0;
+        var isProduct =
+          path.indexOf("page01") !== -1 || path.indexOf("/product/") === 0;
+        var isProductsList =
+          !isProduct && !isLanding && path.indexOf("/products") === 0;
+        var route = isLanding
+          ? "landing"
+          : isProduct
+            ? "product"
+            : isProductsList
+              ? "products"
+              : "home";
 
         // Route chunks. The map is filled in at build time by
         // scripts/preload-route-chunks.js from webpack's own output, so only
@@ -54,22 +66,17 @@
         // main.js to finish evaluating.
         var routeChunks = window.__routeChunks;
 
-        if (routeChunks) {
-          var chunkFiles = isLanding
-            ? routeChunks.landing
-            : isProduct
-              ? routeChunks.product
-              : null;
+        if (routeChunks && routeChunks[route]) {
+          var chunkFiles = routeChunks[route];
 
-          if (chunkFiles && chunkFiles.length) {
-            for (var c = 0; c < chunkFiles.length; c += 1) {
-              var chunkLink = document.createElement("link");
+          for (var c = 0; c < chunkFiles.length; c += 1) {
+            var chunkLink = document.createElement("link");
+            var isCss = /\.css$/.test(chunkFiles[c]);
 
-              chunkLink.rel = "preload";
-              chunkLink.as = "script";
-              chunkLink.href = chunkFiles[c];
-              document.head.appendChild(chunkLink);
-            }
+            chunkLink.rel = "preload";
+            chunkLink.as = isCss ? "style" : "script";
+            chunkLink.href = chunkFiles[c];
+            document.head.appendChild(chunkLink);
           }
         }
 
@@ -79,31 +86,24 @@
           document.documentElement.className += " route-landing";
         }
 
-        // Must stay identical to the srcSet used in the page components.
-        var srcset = isLanding
-          ? "/images/desc-540.webp 540w, /images/desc-900.webp 900w, /images/desc.webp 1080w"
-          : isProduct
-            ? "/images/hero-500.webp 500w, /images/hero-800.webp 800w, /images/hero.webp 1000w"
+        // Above-the-fold image of this route. Every picture is a local file
+        // under /images, and the markup uses the same URL, so the preload is
+        // always reused and never downloaded twice.
+        var heroImage = isLanding
+          ? "/images/01/desc.webp"
+          : isProduct || route === "home"
+            ? "/images/01/th.webp"
             : null;
 
-        if (!srcset) {
+        if (!heroImage) {
           return;
         }
 
         var preload = document.createElement("link");
 
-        // Only preload when the browser can match the responsive srcset, so we
-        // never download two different sizes of the same picture.
-        if (preload.imageSrcset === undefined) {
-          return;
-        }
-
         preload.rel = "preload";
         preload.as = "image";
-        preload.imageSrcset = srcset;
-        preload.imageSizes = isLanding
-          ? "100vw"
-          : "(max-width: 760px) 100vw, 560px";
+        preload.href = heroImage;
         preload.setAttribute("fetchpriority", "high");
 
         // The tracking scripts below wait for this flag, so the third-party
@@ -166,15 +166,11 @@
         max-width: 300px;
         height: 16px;
       }
-      /* 1.5 kB blur-up preview of the landing artwork. It is painted by the
-         boot skeleton and by the React image frame (class `art-lqip`), so the
-         whole long page is visible while the sharp image streams in. */
+      /* Landing route: the boot skeleton keeps the exact shape of the artwork
+         so the long page does not jump while the image streams in. */
       .art-lqip,
       .route-landing .boot-visual {
         background-color: #f6ecdd;
-        background-image: url("/images/desc-lqip.webp");
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
       }
       .route-landing .boot-body {
         padding: 0;

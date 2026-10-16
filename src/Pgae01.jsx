@@ -1,11 +1,15 @@
 import { Box, Button, Chip, Paper, Typography } from "@mui/material";
 import { ShoppingCart } from "@mui/icons-material";
+import { useParams } from "react-router-dom";
 import Form from "./components/Form";
 import { data } from "./data";
 import { useEffect, useState } from "react";
 
 export default function Page01() {
-  const product = data.find((item) => item.id === "l-1");
+  // The product to show comes from the route (/product/:id) and falls back to
+  // the original product for the legacy /products/page01 link.
+  const { id } = useParams();
+  const product = data.find((item) => item.id === (id || "l-1")) || data[0];
   const [showBtn, setShowBtn] = useState(false);
 
   useEffect(() => {

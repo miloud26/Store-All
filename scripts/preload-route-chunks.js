@@ -34,6 +34,11 @@ const MARKER = /window\.__routeChunks\s*=\s*null/;
 const log = (message) => console.log(`[preload-route-chunks] ${message}`);
 
 const ROUTES = [
+  // The shared store chrome (navbar + footer) is code-split as well, so its
+  // chunks are added to every route that renders inside it.
+  { key: "layout", page: "StoreLayout.jsx", hidden: true },
+  { key: "home", page: "Home.jsx", withLayout: true },
+  { key: "products", page: "Products.jsx", withLayout: true },
   { key: "product", page: "Pgae01.jsx" },
   { key: "landing", page: "LandingPage01.jsx" },
 ];
@@ -93,8 +98,25 @@ const main = () => {
       ? `/static/js/${id}.${hashById[id]}.chunk.js`
       : null;
 
+  // CSS chunks follow the same id-based naming; the hash is shared by all of
+  // them in the runtime helper.
+  const cssHash = (mainSource.match(
+    /miniCssF=\w+=>"static\/css\/"\+\w+\+"\.([0-9a-f]+)\.chunk\.css"/,
+  ) || [])[1];
+
+  const cssFile = (id) => {
+    if (!cssHash) {
+      return null;
+    }
+
+    const relative = `/static/css/${id}.${cssHash}.chunk.css`;
+
+    return fs.existsSync(path.join(BUILD_DIR, relative)) ? relative : null;
+  };
+
   // The lazy-route chunk groups: Promise.all([n.e(a), n.e(b), ...])
   const groups = [];
+  const grouped = new Set();
 
   for (const match of mainSource.matchAll(
     /Promise\.all\(\[((?:\w+\.e\(\d+\),?)+)\]\)/g,
@@ -103,10 +125,22 @@ const main = () => {
 
     if (ids.length) {
       groups.push(ids);
+      ids.forEach((id) => grouped.add(id));
     }
   }
 
-  const routeChunks = {};
+  // A dynamic import whose chunk has no extra dependencies is emitted as a
+  // bare __webpack_require__.e(id) with no Promise.all wrapper.
+  for (const match of mainSource.matchAll(/\.e\((\d+)\)/g)) {
+    const id = match[1];
+
+    if (!grouped.has(id)) {
+      grouped.add(id);
+      groups.push([id]);
+    }
+  }
+
+  const found = {};
   const used = new Set();
 
   for (const route of ROUTES) {
@@ -126,14 +160,31 @@ const main = () => {
       continue;
     }
 
-    const files = group.map(fileName).filter(Boolean);
+    const files = group
+      .flatMap((id) => [fileName(id), cssFile(id)])
+      .filter(Boolean);
 
     group.forEach((id) => used.add(id));
+    found[route.key] = files;
+  }
+
+  const routeChunks = {};
+
+  for (const route of ROUTES) {
+    if (route.hidden || !found[route.key]) {
+      continue;
+    }
+
+    const files =
+      route.withLayout && found.layout
+        ? [...new Set([...found.layout, ...found[route.key]])]
+        : found[route.key];
+
     routeChunks[route.key] = files;
     log(`${route.key}: ${files.join(", ")}`);
   }
 
-  if (!routeChunks.product && !routeChunks.landing) {
+  if (!Object.keys(routeChunks).length) {
     log("nothing identified, index.html left untouched");
 
     return;

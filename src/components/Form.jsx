@@ -530,6 +530,36 @@ function Form({ id }) {
                     direction: "rtl",
                   }}
                 >
+                  <Box>
+                    <div
+                      dir="rtl"
+                      style={{
+                        boxSizing: "border-box",
+                        width: "100%",
+                        margin: "0 0 10px",
+                        padding: "12px 14px",
+                        background: "#f7f7f7",
+                        border: "1px solid #e2e2e2",
+                        borderRadius: "10px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        gap: "8px",
+                        fontFamily: "Arial, sans-serif",
+                        textAlign: "center",
+                        color: "#222",
+                      }}
+                    >
+                      <span style={{ fontSize: "19px" }}>🎁</span>
+                      <span style={{ fontSize: "14px", lineHeight: 1.7 }}>
+                        عند طلب{" "}
+                        <strong style={{ fontSize: "16px" }}>كمية 2</strong>{" "}
+                        <span style={{ color: "#16803c", fontWeight: 700 }}>
+                          التوصيل مجاني!
+                        </span>
+                      </span>
+                    </div>
+                  </Box>
                   <Box
                     sx={{
                       display: "flex",
@@ -558,7 +588,7 @@ function Form({ id }) {
                   >
                     <span>سعر التوصيل</span>
                     <strong style={{ color: "#222", fontWeight: 600 }}>
-                      {product.delevery} دج
+                      {+quantity === 1 ? product.delevery : 0} دج
                     </strong>
                   </Box>
 
@@ -576,7 +606,10 @@ function Form({ id }) {
                   >
                     <span>المجموع</span>
                     <strong style={{ fontSize: "21px", fontWeight: 800 }}>
-                      {+product.price + +product.delevery} دج
+                      {+quantity === 1
+                        ? +product.price + +product.delevery
+                        : +product.price * +quantity}{" "}
+                      دج
                     </strong>
                   </Box>
                 </Box>
