@@ -23,7 +23,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600;700;800&family=Rubik:wght@400;600;700;800&display=swap"
       media="print"
-      onload="this.media='all'"
+      onload="this.media = 'all'"
     />
     <noscript>
       <link
@@ -151,7 +151,12 @@
         width: 100%;
         max-width: 560px;
         border-radius: 18px;
-        background: linear-gradient(100deg, #f6ecdd 20%, #fff8ee 40%, #f6ecdd 60%);
+        background: linear-gradient(
+          100deg,
+          #f6ecdd 20%,
+          #fff8ee 40%,
+          #f6ecdd 60%
+        );
         background-size: 220% 100%;
         animation: boot-shimmer 1.25s linear infinite;
       }
@@ -201,7 +206,7 @@
       }
     </style>
 
-    <!-- Meta Pixel Code
+    <!-- Meta Pixel Code-->
     <script>
       !(function (f, b, e, v, n, t, s) {
         if (f.fbq) return;
@@ -237,166 +242,7 @@
         src="https://www.facebook.com/tr?id=2272214979975401&ev=PageView&noscript=1"
     /></noscript>
 
-    End Meta Pixel Code -->
-
-    <!-- TikTok + Clarity start only once the store's own critical media has
-         finished downloading. They still fire their page view (also on the
-         first interaction or when the tab is hidden), but they no longer pull
-         ~145 kB over the same pipe that is fetching the LCP image / bundle. -->
-    <script>
-      (function () {
-        var started = false;
-
-        function loadAnalytics() {
-          if (started) {
-            return;
-          }
-          started = true;
-
-          /* TikTok Pixel Code */
-          !(function (w, d, t) {
-            w.TiktokAnalyticsObject = t;
-            var ttq = (w[t] = w[t] || []);
-            ttq.methods = [
-              "page",
-              "track",
-              "identify",
-              "instances",
-              "debug",
-              "on",
-              "off",
-              "once",
-              "ready",
-              "alias",
-              "group",
-              "enableCookie",
-              "disableCookie",
-            ];
-            ttq.setAndDefer = function (t, e) {
-              t[e] = function () {
-                t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
-              };
-            };
-            for (var i = 0; i < ttq.methods.length; i++) {
-              ttq.setAndDefer(ttq, ttq.methods[i]);
-            }
-            ttq.load = function (e, n) {
-              var r = "https://analytics.tiktok.com/i18n/pixel/events.js";
-              var o = n && n.partner;
-              ttq._i = ttq._i || {};
-              ttq._i[e] = [];
-              ttq._i[e]._u = r;
-              ttq._t = ttq._t || {};
-              ttq._t[e] = +new Date();
-              ttq._o = ttq._o || {};
-              ttq._o[e] = o || {};
-              var a = document.createElement("script");
-              a.type = "text/javascript";
-              a.async = !0;
-              a.src = r + "?sdkid=" + e + "&lib=" + t;
-              var s = document.getElementsByTagName("script")[0];
-              s.parentNode.insertBefore(a, s);
-            };
-
-            ttq.load("D33IDQRC77U0GC4S7H10");
-            ttq.page();
-          })(window, document, "ttq");
-          /* End TikTok Pixel Code */
-
-          /* Microsoft Clarity */
-          (function (c, l, a, r, i, t, y) {
-            c[a] =
-              c[a] ||
-              function () {
-                (c[a].q = c[a].q || []).push(arguments);
-              };
-            t = l.createElement(r);
-            t.async = 1;
-            t.src = "https://www.clarity.ms/tag/" + i;
-            y = l.getElementsByTagName(r)[0];
-            y.parentNode.insertBefore(t, y);
-          })(window, document, "clarity", "script", "y8jc4z44lm");
-        }
-
-        function schedule() {
-          var deadline = Date.now() + 6000;
-
-          // True while the store's own images (LCP included) are still on the
-          // wire.
-          function mediaPending() {
-            if (window.__storeMediaPending) {
-              return true;
-            }
-
-            var imgs = document.images || [];
-
-            for (var i = 0; i < imgs.length; i += 1) {
-              if (!imgs[i].complete) {
-                return true;
-              }
-            }
-
-            var entries = performance.getEntriesByType("resource");
-
-            for (var j = 0; j < entries.length; j += 1) {
-              var entry = entries[j];
-              var isMedia =
-                entry.initiatorType === "img" ||
-                entry.initiatorType === "css" ||
-                entry.initiatorType === "link";
-
-              if (isMedia && entry.responseEnd === 0) {
-                return true;
-              }
-            }
-
-            return false;
-          }
-
-          function start() {
-            if ("requestIdleCallback" in window) {
-              window.requestIdleCallback(loadAnalytics, { timeout: 2000 });
-            } else {
-              window.setTimeout(loadAnalytics, 300);
-            }
-          }
-
-          (function wait() {
-            if (Date.now() < deadline && mediaPending()) {
-              window.setTimeout(wait, 120);
-
-              return;
-            }
-
-            start();
-          })();
-        }
-
-        // Never lose attribution: fire immediately if the visitor interacts or
-        // leaves before the media has settled.
-        ["pointerdown", "keydown", "touchstart"].forEach(function (type) {
-          window.addEventListener(type, loadAnalytics, {
-            once: true,
-            passive: true,
-          });
-        });
-        window.addEventListener(
-          "visibilitychange",
-          function () {
-            if (document.visibilityState === "hidden") {
-              loadAnalytics();
-            }
-          },
-          { once: true },
-        );
-
-        if (document.readyState === "complete") {
-          schedule();
-        } else {
-          window.addEventListener("load", schedule, { once: true });
-        }
-      })();
-    </script>
+    <!--  End Meta Pixel Code -->
   </head>
   <body style="position: relative">
     <div id="root">
