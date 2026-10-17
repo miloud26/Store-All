@@ -4,7 +4,7 @@ export const wilayaCommuneInfo = [
     name: "",
     com: "",
   },
-  {
+  /*{
     id: 1,
     name: "Adrar - أدرار",
     com1: "Adrar - أدرار",
@@ -22,7 +22,7 @@ export const wilayaCommuneInfo = [
     com13: "Tit - تيت",
     com14: "Tsabit - تسابيت",
     com15: "Zaouiet Kounta - زاوية كنتة",
-  },
+  },*/
   {
     id: 2,
     name: "Chlef - الشلف",
@@ -278,7 +278,7 @@ export const wilayaCommuneInfo = [
     com26: "Tolga - طولقة",
     com27: "Zeribet El Oued - زريبة الوادي",
   },
-  {
+  /* {
     id: 8,
     name: "Bechar - بشار",
     com1: "Abadla - العبادلة",
@@ -292,7 +292,7 @@ export const wilayaCommuneInfo = [
     com9: "Meridja - المريجة",
     com10: "Mogheul - موغل",
     com11: "Taghit - تاغيت",
-  },
+  },*/
   {
     id: 9,
     name: "Blida - البليدة",
@@ -371,7 +371,7 @@ export const wilayaCommuneInfo = [
     com44: "Taourirt - تاوريرت",
     com45: "Z'barbar - زبربر",
   },
-  {
+  /*{
     id: 11,
     name: "Tamanrasset - تمنراست",
     com1: "Abalessa - أبلسة",
@@ -379,7 +379,7 @@ export const wilayaCommuneInfo = [
     com3: "Idles - إدلس",
     com4: "Tamanrasset - تمنراست",
     com5: "Tazrouk - تاظروك",
-  },
+  },*/
 
   {
     id: 12,
@@ -1247,14 +1247,14 @@ export const wilayaCommuneInfo = [
     com21: "Stitten - ستيتن",
     com22: "Tousmouline - توسْمُولين",
   },
-  {
+  /* {
     id: 33,
     name: "Illizi - إليزي",
     com1: "Debdeb - الدبداب",
     com2: "Illizi - إليزي",
     com3: "In Amenas - إن أمناس",
     com4: "Bordj Omar Driss - برج عمر إدريس",
-  },
+  },*/
   {
     id: 34,
     name: "Bordj Bou Arreridj - برج بوعريريج",
@@ -1357,12 +1357,12 @@ export const wilayaCommuneInfo = [
     com23: "Zerizer - زريزر",
     com24: "Zitouna - الزيتونة",
   },
-  {
+  /* {
     id: 37,
     name: "Tindouf - تندوف",
     com1: "Oum El Assel - أم العسل",
     com2: "Tindouf - تندوف",
-  },
+  },*/
   {
     id: 38,
     name: "Tissemsilt - تيسمسيلت",
@@ -1682,7 +1682,7 @@ export const wilayaCommuneInfo = [
     com37: "Yellel - يلل",
     com38: "Zemmoura - زمورة",
   },
-  {
+  /* {
     id: 49,
     name: "Timimoun - تيميمون",
     com1: "Aougrout - أوقروت",
@@ -1701,7 +1701,7 @@ export const wilayaCommuneInfo = [
     name: "Bordj Badji Mokhtar - برج باجي مختار",
     com1: "Bordj Badji Mokhtar - برج باجي مختار",
     com2: "Timiaouine - تيمياوين",
-  },
+  },*/
   {
     id: 51,
     name: "Ouled Djellal - أولاد جلال",
@@ -1712,7 +1712,7 @@ export const wilayaCommuneInfo = [
     com5: "Ras El Miad - رأس الميعاد",
     com7: "Sidi Khaled - سيدي خالد",
   },
-  {
+  /* {
     id: 52,
     name: "Beni Abbes - بني عباس",
     com1: "Beni Abbes - بني عباس",
@@ -1756,7 +1756,7 @@ export const wilayaCommuneInfo = [
     com12: "Touggourt - تقرت",
     com13: "Zaouia El Abidia - الزاوية العابدية",
   },
-  {
+ {
     id: 56,
     name: "Djanet - جانت",
     com1: "Djanet - جانت",
@@ -1780,5 +1780,5 @@ export const wilayaCommuneInfo = [
     com1: "El Meniaa - المنيعة",
     com2: "Hassi Fehal - حاسي الفحل",
     com3: "Hassi Gara - حاسي القارة",
-  },
+  },*/
 ];
