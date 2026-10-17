@@ -1738,7 +1738,7 @@ export const wilayaCommuneInfo = [
     name: "In Guezzam - عين قزام",
     com1: "In Guezzam - عين قزام",
     com2: "Tin Zouatine - تين زواتين",
-  },
+  },*/
   {
     id: 55,
     name: "Touggourt - تقرت",
@@ -1756,12 +1756,12 @@ export const wilayaCommuneInfo = [
     com12: "Touggourt - تقرت",
     com13: "Zaouia El Abidia - الزاوية العابدية",
   },
- {
+  /*{
     id: 56,
     name: "Djanet - جانت",
     com1: "Djanet - جانت",
     com2: "Bordj El Haouasse - برج الحواس",
-  },
+  },*/
   {
     id: 57,
     name: "El M'ghair - المغير",
@@ -1774,7 +1774,7 @@ export const wilayaCommuneInfo = [
     com7: "Still - سطيل",
     com8: "Tenedla - تندلة",
   },
-  {
+  /* {
     id: 58,
     name: "El Meniaa - المنيعة",
     com1: "El Meniaa - المنيعة",
