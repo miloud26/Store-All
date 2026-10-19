@@ -43,4 +43,26 @@ export const data = [
     description:
       "كمّلي إطلالة طفلك هذا الشتاء بطقم متناسق يجمع بين الأناقة والبساطة! 🤎",
   },
+  {
+    id: "l-2TK",
+    name: "طقم شتوي للأطفال 3 قطع",
+    slug: "",
+    phone: "",
+    hashprice: "2200",
+    price: "1900",
+    delevery: "500",
+    clr: [],
+    size: [],
+    descImag1: `${process.env.PUBLIC_URL}/images/02/desc.webp`,
+    themImg: `${process.env.PUBLIC_URL}/images/02/th.webp`,
+    url: "https://script.google.com/macros/s/AKfycbz6rsoDp-39R2xVdtSidue9i8uOH-X811jpXuXJkaV7hQx5GxqG5I-HvPBhcPkvipVu/exec",
+    // Optional fields used by the store pages (homepage, /products, cards).
+    // They are additive only — the product page and the order flow never read
+    // them, so the existing behaviour is unchanged.
+    category: "ملابس أطفال",
+    featured: true,
+    badge: "الأكثر طلباً",
+    description:
+      "كمّلي إطلالة طفلك هذا الشتاء بطقم متناسق يجمع بين الأناقة والبساطة! 🤎",
+  },
 ];
