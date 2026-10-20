@@ -50,7 +50,7 @@ export const data = [
     phone: "",
     hashprice: "2200",
     price: "1900",
-    delevery: "500",
+    delevery: "600",
     clr: [],
     size: [],
     descImag1: `${process.env.PUBLIC_URL}/images/02/desc.webp`,
