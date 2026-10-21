@@ -8,6 +8,7 @@ const Home = lazy(() => import("./pages/Home.jsx"));
 const Products = lazy(() => import("./pages/Products.jsx"));
 
 const Page01 = lazy(() => import("./Pgae01.jsx"));
+const Page02 = lazy(() => import("./Pgae02.jsx"));
 const LandingPage01 = lazy(() => import("./LandingPage01.jsx"));
 
 const Error = lazy(() => import("./components/Error"));
@@ -32,6 +33,7 @@ const App = () => {
         <Route path="/products/landingpage02" element={<LandingPage02 />} />
         <Route path="/products/landingpage02tk" element={<LandingPage02TK />} />
         <Route path="/products/page01" element={<Page01 />} />
+        <Route path="/products/page02" element={<Page02 />} />
 
         <Route path="/thank-you" element={<ThankYou />} />
         <Route path="*" element={<Error />} />
