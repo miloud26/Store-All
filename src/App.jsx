@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import React, { lazy, Suspense } from "react";
-import LandingPage02 from "./LandingPage02.jsx";
+//import LandingPage02 from "./LandingPage02.jsx";
 import LandingPage02TK from "./LandingPage02TK.jsx";
 
 const StoreLayout = lazy(() => import("./components/StoreLayout.jsx"));
