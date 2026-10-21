@@ -11,7 +11,7 @@ export default function Page02() {
   const { id } = useParams();
   const product = data.find((item) => item.id === (id || "l-2")) || data[0];
   const [showBtn, setShowBtn] = useState(false);
-
+  //خن//
   useEffect(() => {
     const onScroll = () => {
       const nextShowBtn = window.scrollY > 500;
