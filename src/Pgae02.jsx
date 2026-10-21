@@ -1,4 +1,4 @@
-import { Box, Button, Chip, Paper, Typography } from "@mui/material";
+import { Box, Button, Paper, Typography } from "@mui/material";
 import { ShoppingCart } from "@mui/icons-material";
 import { useParams } from "react-router-dom";
 import Form from "./components/Form";
@@ -37,8 +37,6 @@ export default function Page02() {
 
       <Box className="hero">
         <Box className="visual">
-          <Chip label="الأكثر طلباً" className="badge" />
-
           <img
             src={product.themImg}
             alt={product.name}

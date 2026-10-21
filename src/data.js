@@ -38,8 +38,7 @@ export const data = [
     // They are additive only — the product page and the order flow never read
     // them, so the existing behaviour is unchanged.
     category: "ملابس أطفال",
-    featured: true,
-    badge: "الأكثر طلباً",
+    //featured: true,
     description:
       "كمّلي إطلالة طفلك هذا الشتاء بطقم متناسق يجمع بين الأناقة والبساطة! 🤎",
   },
