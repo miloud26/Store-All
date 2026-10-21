@@ -12,7 +12,7 @@ const LandingPage01 = lazy(() => import("./LandingPage01.jsx"));
 
 const Error = lazy(() => import("./components/Error"));
 const ThankYou = lazy(() => import("./components/ThankYou"));
-
+//ok
 const App = () => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
