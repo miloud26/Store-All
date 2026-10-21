@@ -58,11 +58,6 @@ export default function Page01() {
         <Box className="details">
           <Typography component="h1">{product.name}</Typography>
 
-          <Typography className="lead">
-            تركيبة طبيعية تساعد على تهدئة البشرة وترطيبها بعمق. اطلب الآن واستفد
-            من العرض الخاص.
-          </Typography>
-
           <Box className="price">
             <span className="old">{product.hashprice} دج</span>
 
@@ -87,8 +82,6 @@ export default function Page01() {
         </Box>
 
         <Box className="description">
-          <Typography variant="h2">لماذا كريم الصدفية من TOVA؟</Typography>
-
           <img
             src={product.descImag1}
             alt="تفاصيل المنتج"
