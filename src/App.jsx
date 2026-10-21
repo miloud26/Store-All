@@ -30,10 +30,10 @@ const App = () => {
 
         {/* Existing routes, kept for links that are already in use. */}
         <Route path="/products/landingpage01" element={<LandingPage01 />} />
-        <Route path="/products/landingpage02" element={<LandingPage02 />} />
+
         <Route path="/products/landingpage02tk" element={<LandingPage02TK />} />
         <Route path="/products/page01" element={<Page01 />} />
-        <Route path="/products/page02" element={<Page02 />} />
+        <Route path="/products/landingpage02" element={<Page02 />} />
 
         <Route path="/thank-you" element={<ThankYou />} />
         <Route path="*" element={<Error />} />
