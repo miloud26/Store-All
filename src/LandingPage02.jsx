@@ -68,6 +68,22 @@ export default function LandingPage02() {
         <Box width="100%" className="details">
           <Box
             width="100%"
+            className=""
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            color={"#000"}
+            margin={"35px 0"}
+          >
+            <Typography
+              variant="h4"
+              sx={{ color: "#000", fontWeight: "bold", lineHeight: "1.9" }}
+            >
+              <strong>{product.name}</strong>
+            </Typography>
+          </Box>
+          <Box
+            width="100%"
             className="price"
             display="flex"
             justifyContent="center"
