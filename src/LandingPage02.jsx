@@ -43,7 +43,6 @@ export default function LandingPage02() {
           className="art-lqip"
           sx={{
             width: "100%",
-            aspectRatio: "1080 / 9720",
           }}
         >
           <img
