@@ -1,0 +1,124 @@
+import { Box, Button, Paper, Typography } from "@mui/material";
+import { ShoppingCart } from "@mui/icons-material";
+import Form from "./components/Form";
+import { data } from "./data";
+import { useEffect, useState } from "react";
+
+export default function LandingPage03() {
+  const product = data.find((item) => item.id === "l-3");
+  const [showBtn, setShowBtn] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const nextShowBtn = window.scrollY > 500;
+
+      setShowBtn((prev) => (prev === nextShowBtn ? prev : nextShowBtn));
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const goToForm = () =>
+    document
+      .getElementById("order-form")
+      ?.scrollIntoView({ behavior: "smooth", block: "center" });
+
+  return (
+    <Box className="store" dir="rtl">
+      <Box
+        className="description landing-art"
+        sx={{
+          width: "100%",
+          lineHeight: 0,
+          overflow: "hidden",
+          border: "1px solid rgba(185,108,32,.1)",
+          borderRadius: "16px",
+          background: "#fff",
+          boxShadow: "0 10px 28px rgba(72,43,18,.07)",
+        }}
+      >
+        <Box
+          className="art-lqip"
+          sx={{
+            width: "100%",
+          }}
+        >
+          <img
+            src={product.descImag1}
+            alt="تفاصيل المنتج"
+            width="1080"
+            height="9720"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+            style={{
+              display: "block",
+              width: "100%",
+              height: "auto",
+              maxWidth: "100%",
+              objectFit: "contain",
+            }}
+          />
+        </Box>
+      </Box>
+
+      <Box width="100%" className="hero" display="flex" justifyContent="center">
+        <Box width="100%" className="details">
+          <Box
+            width="100%"
+            className=""
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            color={"#000"}
+            margin={"35px 0"}
+          >
+            <Typography
+              variant="h4"
+              sx={{ color: "#000", fontWeight: "bold", lineHeight: "1.9" }}
+            >
+              <strong>{product.name}</strong>
+            </Typography>
+          </Box>
+          <Box
+            width="100%"
+            className="price"
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+          >
+            <span className="old">{product.hashprice} دج</span>
+
+            <strong>
+              {product.price} <small>دج</small>
+            </strong>
+          </Box>
+        </Box>
+      </Box>
+
+      <Box className="content">
+        <Box className="order-column" id="order-form">
+          <Paper className="order-card">
+            <Typography variant="h2">أكمل طلبك الآن</Typography>
+
+            <Typography className="sub">
+              أدخل معلوماتك وسنتصل بك لتأكيد الطلب
+            </Typography>
+
+            <Form id={product.id} />
+          </Paper>
+        </Box>
+      </Box>
+
+      <Button
+        onClick={goToForm}
+        className={`mobile-cta ${showBtn ? "visible" : ""}`}
+        startIcon={<ShoppingCart />}
+      >
+        اطلب الآن • الدفع عند الاستلام
+      </Button>
+    </Box>
+  );
+}

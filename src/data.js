@@ -64,4 +64,26 @@ export const data = [
     description:
       "كمّلي إطلالة طفلك هذا الشتاء بطقم متناسق يجمع بين الأناقة والبساطة! 🤎",
   },
+  {
+    id: "l-3",
+    name: "تنورة الأطفال ضد البلل",
+    slug: "",
+    phone: "",
+    hashprice: "2200",
+    price: "1900",
+    delevery: "600",
+    clr: [],
+    size: [],
+    descImag1: `${process.env.PUBLIC_URL}/images/03/desc.webp`,
+    themImg: `${process.env.PUBLIC_URL}/images/03/th.webp`,
+    url: "https://script.google.com/macros/s/AKfycby-EiweIoJNfcDqVtDSkMcraqA5z49jt5BogmvCk11bJJ9GGUN0wYIjkW7vqkVj0t0mVA/exec",
+    // Optional fields used by the store pages (homepage, /products, cards).
+    // They are additive only — the product page and the order flow never read
+    // them, so the existing behaviour is unchanged.
+    category: "ملابس أطفال",
+    featured: true,
+    badge: "الأكثر طلباً",
+    description:
+      "تنورة أطفال بطبقة داخلية مقاومة للماء تساعد على امتصاص البلل والحد من تسرب البول إلى الفراش. تصميم مبطن ومريح، بمقاسين من 3 إلى 5 سنوات ومن 6 إلى 10 سنوات. التوصيل مجاني عند شراء قطعتين.",
+  },
 ];
