@@ -110,7 +110,7 @@ export const data = [
   },
   {
     id: "l-5",
-    name: "أداة كويرات اللحم",
+    name: "ملقط ومصفاة 2 في 1 للمطبخ",
     slug: "",
     phone: "",
     hashprice: "2200",
@@ -118,8 +118,8 @@ export const data = [
     delevery: "600",
     clr: [],
     size: [],
-    descImag1: `${process.env.PUBLIC_URL}/images/04/desc.webp`,
-    themImg: `${process.env.PUBLIC_URL}/images/04/th.webp`,
+    descImag1: `${process.env.PUBLIC_URL}/images/05/desc.webp`,
+    themImg: `${process.env.PUBLIC_URL}/images/05/th.webp`,
     url: "https://script.google.com/macros/s/AKfycby-EiweIoJNfcDqVtDSkMcraqA5z49jt5BogmvCk11bJJ9GGUN0wYIjkW7vqkVj0t0mVA/exec",
     // Optional fields used by the store pages (homepage, /products, cards).
     // They are additive only — the product page and the order flow never read
@@ -128,6 +128,6 @@ export const data = [
     featured: true,
     badge: "الأكثر طلباً",
     description:
-      "حضّري كويرات اللحم بشكل دائري ومتناسق وبحجم متقارب، مع توفير الوقت والمجهود في تحضير الكفتة والشوربة ووصفاتك المفضلة.",
+      "سهّلي إخراج المقليات وصفّي الزيت الزايد بسهولة بأداة عملية تجمع بين الملقط والمصفاة في تصميم واحد من الستانلس ستيل.",
   },
 ];
