@@ -57,6 +57,26 @@ export default function Page01() {
 
         <Box className="details">
           <Typography component="h1">{product.name}</Typography>
+          <Typography
+            component="h2"
+            sx={{
+              fontSize: { xs: "1.3rem", md: "2.2rem" },
+              fontWeight: 800,
+              display: "inline-block",
+              animation: "pulseTitle 1.5s ease-in-out infinite",
+
+              "@keyframes pulseTitle": {
+                "0%, 100%": {
+                  transform: "scale(1)",
+                },
+                "50%": {
+                  transform: "scale(1.08)",
+                },
+              },
+            }}
+          >
+            {product.slug}
+          </Typography>
 
           <Box className="price">
             <span className="old">{product.hashprice} دج</span>

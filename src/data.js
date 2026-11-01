@@ -89,7 +89,7 @@ export const data = [
   {
     id: "l-4",
     name: "أداة كويرات اللحم",
-    slug: "",
+    slug: "قطعة واحدة - الغراف فقط دون ملعقة",
     phone: "",
     hashprice: "2200",
     price: "1400",
@@ -133,7 +133,7 @@ export const data = [
   {
     id: "l-4tiktok",
     name: "أداة كويرات اللحم",
-    slug: "",
+    slug: "قطعة واحدة - الغراف فقط دون ملعقة",
     phone: "",
     hashprice: "2200",
     price: "1400",
