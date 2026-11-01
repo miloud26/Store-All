@@ -130,4 +130,26 @@ export const data = [
     description:
       "سهّلي إخراج المقليات وصفّي الزيت الزايد بسهولة بأداة عملية تجمع بين الملقط والمصفاة في تصميم واحد من الستانلس ستيل.",
   },
+  {
+    id: "l-4tiktok",
+    name: "أداة كويرات اللحم",
+    slug: "",
+    phone: "",
+    hashprice: "2200",
+    price: "1400",
+    delevery: "400",
+    clr: [],
+    size: [],
+    descImag1: `${process.env.PUBLIC_URL}/images/04/desc.webp`,
+    themImg: `${process.env.PUBLIC_URL}/images/04/th.webp`,
+    url: "https://script.google.com/macros/s/AKfycbz6rsoDp-39R2xVdtSidue9i8uOH-X811jpXuXJkaV7hQx5GxqG5I-HvPBhcPkvipVu/exec",
+    // Optional fields used by the store pages (homepage, /products, cards).
+    // They are additive only — the product page and the order flow never read
+    // them, so the existing behaviour is unchanged.
+    category: "أدوات المطبخ",
+    featured: true,
+    badge: "الأكثر طلباً",
+    description:
+      "حضّري كويرات اللحم بشكل دائري ومتناسق وبحجم متقارب، مع توفير الوقت والمجهود في تحضير الكفتة والشوربة ووصفاتك المفضلة.",
+  },
 ];
