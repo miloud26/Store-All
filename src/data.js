@@ -152,4 +152,26 @@ export const data = [
     description:
       "حضّري كويرات اللحم بشكل دائري ومتناسق وبحجم متقارب، مع توفير الوقت والمجهود في تحضير الكفتة والشوربة ووصفاتك المفضلة.",
   },
+  {
+    id: "l-6",
+    name: "منظم الأدوية الإلكتروني",
+    slug: "",
+    phone: "",
+    hashprice: "2700",
+    price: "1900",
+    delevery: "600",
+    clr: [],
+    size: [],
+    descImag1: `${process.env.PUBLIC_URL}/images/06/desc.webp`,
+    themImg: `${process.env.PUBLIC_URL}/images/06/th.webp`,
+    url: "https://script.google.com/macros/s/AKfycby-EiweIoJNfcDqVtDSkMcraqA5z49jt5BogmvCk11bJJ9GGUN0wYIjkW7vqkVj0t0mVA/exec",
+    // Optional fields used by the store pages (homepage, /products, cards).
+    // They are additive only — the product page and the order flow never read
+    // them, so the existing behaviour is unchanged.
+    category: "أدوات المطبخ",
+    featured: true,
+    badge: "منظمات الأدوية",
+    description:
+      "منظم أدوية إلكتروني بثلاثة أقسام منفصلة، مزود بشاشة رقمية ومنبه لتذكيرك بمواعيد تناول الدواء.",
+  },
 ];
