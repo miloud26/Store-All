@@ -174,4 +174,26 @@ export const data = [
     description:
       "منظم أدوية إلكتروني بثلاثة أقسام منفصلة، مزود بشاشة رقمية ومنبه لتذكيرك بمواعيد تناول الدواء.",
   },
+  {
+    id: "l-7",
+    name: "غربال دقيق",
+    slug: "",
+    phone: "",
+    hashprice: "2300",
+    price: "1900",
+    delevery: "600",
+    clr: [],
+    size: [],
+    descImag1: `${process.env.PUBLIC_URL}/images/07/desc.webp`,
+    themImg: `${process.env.PUBLIC_URL}/images/07/th.webp`,
+    url: "https://script.google.com/macros/s/AKfycby-EiweIoJNfcDqVtDSkMcraqA5z49jt5BogmvCk11bJJ9GGUN0wYIjkW7vqkVj0t0mVA/exec",
+    // Optional fields used by the store pages (homepage, /products, cards).
+    // They are additive only — the product page and the order flow never read
+    // them, so the existing behaviour is unchanged.
+    category: "أدوات المطبخ",
+    featured: true,
+    badge: "منظمات الأدوية",
+    description:
+      "غربال عملي بشبكة مزدوجة دقيقة وآلية ضغط بيد واحدة، يساعدك على تنقية الدقيق والتخلص من التكتلات بسهولة لتحضير حلويات ومخبوزات بقوام ناعم ومتجانس.",
+  },
 ];
