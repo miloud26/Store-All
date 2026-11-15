@@ -196,4 +196,26 @@ export const data = [
     description:
       "غربال عملي بشبكة مزدوجة دقيقة وآلية ضغط بيد واحدة، يساعدك على تنقية الدقيق والتخلص من التكتلات بسهولة لتحضير حلويات ومخبوزات بقوام ناعم ومتجانس.",
   },
+  {
+    id: "l-8",
+    name: "نظارات قراءة معدنية قابلة للطي مع حافظة",
+    slug: "",
+    phone: "",
+    hashprice: "2900",
+    price: "2400",
+    delevery: "600",
+    clr: [],
+    size: [],
+    descImag1: `${process.env.PUBLIC_URL}/images/08/desc.webp`,
+    themImg: `${process.env.PUBLIC_URL}/images/08/th.webp`,
+    url: "https://script.google.com/macros/s/AKfycby-EiweIoJNfcDqVtDSkMcraqA5z49jt5BogmvCk11bJJ9GGUN0wYIjkW7vqkVj0t0mVA/exec",
+    // Optional fields used by the store pages (homepage, /products, cards).
+    // They are additive only — the product page and the order flow never read
+    // them, so the existing behaviour is unchanged.
+    category: "إكسسوارات",
+    featured: true,
+    badge: "",
+    description:
+      "نظارات قراءة أنيقة بإطار معدني فضي وعدسات تساعد على حجب الضوء الأزرق، بتصميم قابل للطي وخفيف الوزن، تأتي مع علبة عملية للحفظ والتنقل. متوفرة بدرجات قراءة متعددة من +100 إلى +400.",
+  },
 ];
