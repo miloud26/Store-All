@@ -514,10 +514,7 @@ function Form({ id }) {
                       marginTop: "10px",
                       fontWeight: 600,
                     }}
-                  >
-                    لقد قمت بالفعل بإرسال طلب. يمكنك إرسال طلب جديد بعد مرور 24
-                    ساعة.
-                  </Typography>
+                  ></Typography>
                 )}
                 <Box
                   sx={{
@@ -550,6 +547,7 @@ function Form({ id }) {
                         fontFamily: "Arial, sans-serif",
                         textAlign: "center",
                         color: "#222",
+                        animation: "softZoom 1.1s ease-in-out infinite",
                       }}
                     >
                       <span style={{ fontSize: "19px" }}>🎁</span>
@@ -560,6 +558,19 @@ function Form({ id }) {
                           التوصيل مجاني!
                         </span>
                       </span>
+
+                      <style>
+                        {`
+      @keyframes softZoom {
+        0%, 100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.025);
+        }
+      }
+    `}
+                      </style>
                     </div>
                   </Box>
                   <Box
