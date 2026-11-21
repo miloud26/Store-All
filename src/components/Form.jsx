@@ -536,9 +536,9 @@ function Form({ id }) {
                         boxSizing: "border-box",
                         width: "100%",
                         margin: "0 0 10px",
-                        padding: "12px 14px",
-                        background: "#f7f7f7",
-                        border: "1px solid #e2e2e2",
+                        padding: "10px 11px",
+                        background: "#f3e7e7",
+                        border: "1px solid #e1b7b7",
                         borderRadius: "10px",
                         display: "flex",
                         alignItems: "center",
@@ -546,17 +546,28 @@ function Form({ id }) {
                         gap: "8px",
                         fontFamily: "Arial, sans-serif",
                         textAlign: "center",
-                        color: "#222",
+                        color: "#000000",
                         animation: "softZoom 1.1s ease-in-out infinite",
                       }}
                     >
-                      <span style={{ fontSize: "19px" }}>🎁</span>
-                      <span style={{ fontSize: "14px", lineHeight: 1.7 }}>
+                      <span style={{ fontSize: "18px", lineHeight: 1.7 }}>
                         عند طلب{" "}
                         <strong style={{ fontSize: "16px" }}>كمية 2</strong>{" "}
                         <span style={{ color: "#16803c", fontWeight: 700 }}>
-                          التوصيل مجاني!
+                          الثالثة مجانا
                         </span>
+                        <Box marginTop={"5px"}>
+                          {" "}
+                          <span
+                            style={{
+                              color: "#e02b3a",
+                              fontWeight: 700,
+                              fontSize: "20px",
+                            }}
+                          >
+                            عرض لمدة 3 أيام فقط
+                          </span>
+                        </Box>
                       </span>
 
                       <style>
@@ -566,7 +577,7 @@ function Form({ id }) {
           transform: scale(1);
         }
         50% {
-          transform: scale(1.025);
+          transform: scale(1.05);
         }
       }
     `}
