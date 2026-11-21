@@ -218,4 +218,26 @@ export const data = [
     description:
       "نظارات قراءة أنيقة بإطار معدني فضي وعدسات تساعد على حجب الضوء الأزرق، بتصميم قابل للطي وخفيف الوزن، تأتي مع علبة عملية للحفظ والتنقل. متوفرة بدرجات قراءة متعددة من +100 إلى +400.",
   },
+  {
+    id: "l-9-zino",
+    name: "Miroir avec Porte-Manteau et Rangements",
+    slug: "",
+    phone: "",
+    hashprice: "13500",
+    price: "10500",
+    delevery: "0",
+    clr: [],
+    size: [],
+    descImag1: `${process.env.PUBLIC_URL}/images/zino/desc.webp`,
+    themImg: `${process.env.PUBLIC_URL}/images/zino/th.webp`,
+    url: "https://script.google.com/macros/s/AKfycby-EiweIoJNfcDqVtDSkMcraqA5z49jt5BogmvCk11bJJ9GGUN0wYIjkW7vqkVj0t0mVA/exec",
+    // Optional fields used by the store pages (homepage, /products, cards).
+    // They are additive only — the product page and the order flow never read
+    // them, so the existing behaviour is unchanged.
+    category: "Maison & Décoration",
+    featured: true,
+    badge: "",
+    description:
+      "Apportez une touche d'élégance et de praticité à votre intérieur avec ce miroir pleine longueur multifonctionnel.",
+  },
 ];
