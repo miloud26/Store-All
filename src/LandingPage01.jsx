@@ -1,11 +1,13 @@
-import { Box, Button, Paper, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { ShoppingCart } from "@mui/icons-material";
 import Form from "./components/Form";
 import { data } from "./data";
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 export default function LandingPage01() {
-  const product = data.find((item) => item.id === "l-1");
+  const { id } = useParams();
+  const product = data.find((item) => item.id === (id || "l-1")) || data[0];
   const [showBtn, setShowBtn] = useState(false);
 
   useEffect(() => {
@@ -39,25 +41,19 @@ export default function LandingPage01() {
           boxShadow: "0 10px 28px rgba(72,43,18,.07)",
         }}
       >
-        <Box
-          className="art-lqip"
-          sx={{
-            width: "100%",
-            aspectRatio: "1080 / 9720",
-          }}
-        >
+        <Box className="art-lqip">
           <img
             src={product.descImag1}
             alt="تفاصيل المنتج"
             width="1080"
-            height="9720"
+            height="100%"
             loading="eager"
             fetchPriority="high"
             decoding="async"
             style={{
               display: "block",
               width: "100%",
-              height: "auto",
+
               maxWidth: "100%",
               objectFit: "contain",
             }}
@@ -66,14 +62,30 @@ export default function LandingPage01() {
       </Box>
 
       <Box width="100%" className="hero" display="flex" justifyContent="center">
-        <Box width="100%" className="details">
-          <Box
-            width="100%"
-            className="price"
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
+        <Box className="details">
+          <Typography component="h1">{product.name}</Typography>
+          <Typography
+            component="h2"
+            sx={{
+              fontSize: { xs: "1.3rem", md: "2.2rem" },
+              fontWeight: 800,
+              display: "inline-block",
+              animation: "pulseTitle 1.5s ease-in-out infinite",
+
+              "@keyframes pulseTitle": {
+                "0%, 100%": {
+                  transform: "scale(1)",
+                },
+                "50%": {
+                  transform: "scale(1.08)",
+                },
+              },
+            }}
           >
+            {product.slug}
+          </Typography>
+
+          <Box className="price">
             <span className="old">{product.hashprice} دج</span>
 
             <strong>
@@ -85,15 +97,7 @@ export default function LandingPage01() {
 
       <Box className="content">
         <Box className="order-column" id="order-form">
-          <Paper className="order-card">
-            <Typography variant="h2">أكمل طلبك الآن</Typography>
-
-            <Typography className="sub">
-              أدخل معلوماتك وسنتصل بك لتأكيد الطلب
-            </Typography>
-
-            <Form id={product.id} />
-          </Paper>
+          <Form id={product.id} />
         </Box>
       </Box>
 

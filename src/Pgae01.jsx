@@ -1,4 +1,4 @@
-import { Box, Button, Chip, Paper, Typography } from "@mui/material";
+import { Box, Button, Chip, Typography } from "@mui/material";
 import { ShoppingCart } from "@mui/icons-material";
 import { useParams } from "react-router-dom";
 import Form from "./components/Form";
@@ -90,15 +90,7 @@ export default function Page01() {
 
       <Box className="content">
         <Box className="order-column" id="order-form">
-          <Paper className="order-card">
-            <Typography variant="h2">أكمل طلبك الآن</Typography>
-
-            <Typography className="sub">
-              أدخل معلوماتك وسنتصل بك لتأكيد الطلب
-            </Typography>
-
-            <Form id={product.id} />
-          </Paper>
+          <Form id={product.id} />
         </Box>
 
         <Box className="description">

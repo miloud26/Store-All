@@ -591,49 +591,71 @@ function Form({ id }) {
                         style={{
                           boxSizing: "border-box",
                           width: "100%",
-                          margin: "0 0 10px",
-                          padding: "10px 11px",
-                          background: "#f3e7e7",
-                          border: "1px solid #e1b7b7",
-                          borderRadius: "10px",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          gap: "8px",
-                          fontFamily: "Arial, sans-serif",
+                          margin: "0 0 12px",
+                          padding: "13px 12px",
+                          background:
+                            "linear-gradient(135deg, #fff8e8 0%, #ffeded 100%)",
+                          border: "2px solid #e8b2a8",
+                          borderRadius: "12px",
                           textAlign: "center",
-                          color: "#000000",
-                          animation: "softZoom 1.1s ease-in-out infinite",
+                          fontFamily: "Arial, sans-serif",
+                          boxShadow: "0 3px 10px rgba(160, 35, 35, 0.12)",
+                          animation: "offerPulse 2s ease-in-out infinite",
                         }}
                       >
-                        <span style={{ fontSize: "18px", lineHeight: 1.7 }}>
-                          عند طلب{" "}
-                          <strong style={{ fontSize: "16px" }}>كمية 2</strong>{" "}
-                          <span style={{ color: "#16803c", fontWeight: 700 }}>
-                            الثالثة مجانا
-                          </span>
-                          <Box marginTop={"5px"}>
-                            {" "}
-                            <span
-                              style={{
-                                color: "#e02b3a",
-                                fontWeight: 700,
-                                fontSize: "20px",
-                              }}
-                            >
-                              عرض لمدة 3 أيام فقط
-                            </span>
-                          </Box>
-                        </span>
+                        <div
+                          style={{
+                            fontSize: "17px",
+                            fontWeight: 700,
+                            color: "#292929",
+                            lineHeight: 1.7,
+                          }}
+                        >
+                          اطلب قطعتين واحصل على
+                        </div>
+
+                        <div
+                          style={{
+                            display: "inline-block",
+                            margin: "3px 0 7px",
+                            padding: "5px 17px",
+                            background: "#16803c",
+                            color: "#ffffff",
+                            borderRadius: "8px",
+                            fontSize: "22px",
+                            fontWeight: 900,
+                            lineHeight: 1.5,
+                            boxShadow: "0 3px 7px rgba(22,128,60,0.2)",
+                          }}
+                        >
+                          القطعة الثالثة مجاناً 🎁
+                        </div>
+
+                        <div
+                          style={{
+                            fontSize: "16px",
+                            fontWeight: 800,
+                            color: "#d71936",
+                            lineHeight: 1.6,
+                          }}
+                        >
+                          ⏳ عرض لمدة 3 أيام فقط!
+                        </div>
 
                         <style>
                           {`
-      @keyframes softZoom {
+      @keyframes offerPulse {
         0%, 100% {
           transform: scale(1);
         }
         50% {
-          transform: scale(1.05);
+          transform: scale(1.015);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation: none !important;
         }
       }
     `}
